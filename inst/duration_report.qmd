@@ -1,0 +1,77 @@
+---
+format: html
+title: "Pilot supply-side interview duration"
+# subtitle: "By section and by class"
+toc: true
+toc-depth: 2
+theme: [default, custom.scss]
+# params:
+#   proj_dir: ""
+embed-resources: true
+execute: 
+  eval: true
+  echo: false
+  warning: false
+  error: false
+---
+
+```{r}
+childcare_theme <- reactable::reactableTheme(
+  headerStyle = list(
+    background = "#2da29a",
+    color = "white"
+  ),
+  stripedColor = "hsla(177, 35%, 65%, 0.25)",
+)
+```
+
+## By section
+
+```{r}
+#| label: duration by section
+reactable::reactable(
+  data = targets::tar_read(duration_by_section),
+  defaultColDef = reactable::colDef(
+    maxWidth = 100,
+    format = reactable::colFormat(
+      digits = 2
+    )
+  ),
+  columns = list(
+    section = reactable::colDef(width = 200),
+    n_obs = reactable::colDef(
+      format = reactable::colFormat(separators = TRUE)
+    )
+  ),
+  fullWidth = FALSE,
+  searchable = TRUE,
+  striped = TRUE,
+  theme = childcare_theme
+)
+```
+
+<!-- ## By class -->
+
+<!-- 
+
+3b: capacity/supervision
+11b : observation
+
+ -->
+
+<!-- ## By caregiver type -->
+
+<!-- 
+
+6a
+6b
+ -->
+
+<!-- ## By financial source -->
+
+<!-- 
+
+financing
+in-kind
+
+ -->

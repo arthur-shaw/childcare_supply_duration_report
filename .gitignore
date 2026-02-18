@@ -1,0 +1,11 @@
+# R objects
+.Rproj.user
+.Rhistory
+.RData
+.DS_Store
+
+# targets objects
+_targets/*
+
+# report output
+*.html

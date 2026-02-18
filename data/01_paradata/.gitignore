@@ -1,0 +1,5 @@
+# ignore all export files
+*.json
+*.txt
+*.do
+*.tab
