@@ -16,7 +16,8 @@ targets::tar_option_set(
     "susopara",
     "tidytable",
     "data.table",
-    "dplyr"
+    "dplyr",
+    "quarto"
   )
 )
 
